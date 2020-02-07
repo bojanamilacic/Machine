@@ -81,7 +81,6 @@ export class HomeComponent implements OnInit {
         this.fourthCoinInStock + " od 1 kovanica,  " + this.thirdCoinInStock + " od 0.5 kovanica,  " +
         this.secondCoinInStock + " od 0.2 kovanica,  " + this.firstCoinInStock + " od 0.1 kovanica";
       //  The status of the coins in the machine is shown just for example
-      (document.getElementById('disabledAddBtn') as HTMLInputElement).disabled = true;
 
     }
     else {
@@ -216,8 +215,8 @@ export class HomeComponent implements OnInit {
       this.showChange = "Automat nema dovoljno da vrati kusur";
     }
     else {
-
-      + this.firstCoin + ' od ' + 0.1 + ' , '
+      this.showChange ="Kusur iznosi: "
+        + this.firstCoin + ' od ' + 0.1 + ' , '
         + this.secondCoin + ' od ' + 0.2 + ' , '
         + this.thirdCoin + ' od ' + 0.5 + ' , '
         + this.fourthCoin + ' od ' + 1 + ' , '
@@ -226,7 +225,6 @@ export class HomeComponent implements OnInit {
         + this.seventhCoin + ' od ' + 10 + ' , '
         + this.eightCoin + ' od ' + 20 + ' , '
         + this.ninthCoin + ' od ' + 50;
-      (document.getElementById('disabledBtn') as HTMLInputElement).disabled = true;
 
       setTimeout(() => {
         location.reload();
