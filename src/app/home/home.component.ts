@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  paymantAmount: any = (Math.random() * (10 - 0.1) + 0.1).toFixed(1);
+  paymantAmount: number;
   insertCoin: number = 0;
   change: any;
   pay: number;
