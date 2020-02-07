@@ -19,16 +19,23 @@ export class HomeComponent implements OnInit {
   showChange: string;
   inputValue: number;
   inStockCoins: any;
-  sixthCoinInStock: number = Math.floor(Math.random() * 10);
-  fifthCoinInStock: number = Math.floor(Math.random() * 10);
-  fourthCoinInStock: number = Math.floor(Math.random() * 10);
-  thirdCoinInStock: number = Math.floor(Math.random() * 10);
-  secondCoinInStock: number = Math.floor(Math.random() * 10);
-  firstCoinInStock: number = Math.floor(Math.random() * 10);
+  sixthCoinInStock: number;
+  fifthCoinInStock: number;
+  fourthCoinInStock: number;
+  thirdCoinInStock: number;
+  secondCoinInStock: number;
+  firstCoinInStock: number;
 
   constructor() { }
 
-
+  showCoins(){
+    this.inStockCoins = "Number of coins in the machine: " + this.sixthCoinInStock + " x5," + this.fifthCoinInStock + " x2,  " +
+        this.fourthCoinInStock + " x1,  " + this.thirdCoinInStock + " x0.5,  " +
+        this.secondCoinInStock + " x0.2,  " + this.firstCoinInStock + " x0.1"
+    if(this.sixthCoinInStock == 0 && this.fifthCoinInStock ==0 && this.fourthCoinInStock==0 && 
+      this.thirdCoinInStock==0 && this.secondCoinInStock==0 && this.firstCoinInStock ==0)
+      this.showChange = "Insuficient amount in machine";
+    }
   onItemSelector() {
     if (this.inputValue == 0.1 || this.inputValue == 0.2 || this.inputValue == 0.5
       || this.inputValue == 1 || this.inputValue == 2 || this.inputValue == 5) {
@@ -149,7 +156,7 @@ export class HomeComponent implements OnInit {
         this.firstCoinInStock = this.firstCoinInStock - this.firstCoin;
       }
     }
-
+     
 
     this.showChange = 'Change is ' + this.firstCoin + ' of ' + 0.1 + ' , '
       + this.secondCoin + ' of ' + 0.2 + ' , '

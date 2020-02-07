@@ -1,12 +1,30 @@
 <mat-card class="machineContent">
-    
+    <mat-form-field>
+        <input matInput type = "number" class="addBtn"  placeholder="Insert value of 5" [(ngModel)]="sixthCoinInStock">
+    </mat-form-field>  
+    <mat-form-field> 
+        <input matInput type = "number" class="addBtn"  placeholder="Insert value of 2" [(ngModel)]="fifthCoinInStock">
+    </mat-form-field>
+    <mat-form-field> 
+        <input matInput type = "number" class="addBtn"  placeholder="Insert value of 1" [(ngModel)]="fourthCoinInStock">
+    </mat-form-field>
+    <mat-form-field> 
+        <input matInput type = "number" class="addBtn"  placeholder="Insert value of 0.5" [(ngModel)]="thirdCoinInStock">
+    </mat-form-field> 
+    <mat-form-field> 
+        <input matInput type = "number" class="addBtn"  placeholder="Insert value of 0.2" [(ngModel)]="secondCoinInStock">
+    </mat-form-field>   
+    <mat-form-field> 
+        <input matInput type = "number" class="addBtn"  placeholder="Insert value of 0.1" [(ngModel)]="firstCoinInStock">
+    </mat-form-field> 
+    <button mat-fab color="primary" class="contentBtn" id = "disabledBtn" (click)="showCoins()">ADD</button>
     <p>PAYMANT AMOUNT: {{paymantAmount}}</p>
     <p>INSERT AMOUNT: {{insertCoin | number: '0.1' }}</p>
     <mat-form-field>
         <input matInput type = "number" class="contentBtn"  placeholder="Insert coin" [(ngModel)]="inputValue">
     </mat-form-field>
   
-    <button mat-fab color="primary" class="contentBtn" id = "disabledBtn" (click)="onItemSelector()">ADD</button>
+    <button mat-fab color="primary" class="contentBtn" id = "disabledBtn" (click)="onItemSelector()">PAY</button>
     <button mat-fab color="primary" class="contentBtn" (click)="reset()">RESET</button>
     <p>{{showChange}}</p>
     <p>{{inStockCoins}}</p>
