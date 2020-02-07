@@ -1,6 +1,15 @@
 <mat-card class="machineContent">
     <mat-form-field class="addBtn">
-        <input matInput type = "number" class="paymantBtn"  placeholder="Unosesite iznos placanja" [(ngModel)]="paymantAmount" min="0.1">
+        <input matInput type = "number" class="paymantBtn"  placeholder="Unesesite iznos placanja" [(ngModel)]="paymantAmount" min="0.1">
+    </mat-form-field> 
+    <mat-form-field class="addBtn"> 
+        <input matInput type = "number" class="addBtn"  placeholder="Broj kovanica od 50 na stanju" [(ngModel)]="ninthCoinInStock">
+    </mat-form-field> 
+    <mat-form-field class="addBtn"> 
+        <input matInput type = "number" class="addBtn"  placeholder="Broj kovanica od 20 na stanju" [(ngModel)]="eightCoinInStock">
+    </mat-form-field>   
+    <mat-form-field class="addBtn"> 
+        <input matInput type = "number" class="addBtn"  placeholder="Broj kovanica od 10 na stanju" [(ngModel)]="seventhCoinInStock">
     </mat-form-field> 
     <mat-form-field class="addBtn">
         <input matInput type = "number" class="addBtn"  placeholder="Broj kovanica od 5 na stanju" [(ngModel)]="sixthCoinInStock">
