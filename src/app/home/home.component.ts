@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit {
     }
     else {
       this.showChange = "Incorrect amount";
-   }
+    }
   }
   getPay() {
     this.showChange = "";
@@ -74,9 +74,6 @@ export class HomeComponent implements OnInit {
       this.showChange = "Insuficient amount";
     }
 
-    setTimeout(() => {
-      location.reload();
-    }, 30000);
   }
 
   calculateChange() {
@@ -161,6 +158,10 @@ export class HomeComponent implements OnInit {
       + this.fifthCoin + ' of ' + 2 + ' , '
       + this.sixthCoin + ' of ' + 5;
     (document.getElementById('disabledBtn') as HTMLInputElement).disabled = true;
+
+    setTimeout(() => {
+      location.reload();
+    }, 30000);
 
   }
 
