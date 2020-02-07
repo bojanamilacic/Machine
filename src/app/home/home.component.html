@@ -1,0 +1,13 @@
+<mat-card class="machineContent">
+    
+    <p>PAYMANT AMOUNT: {{paymantAmount}}</p>
+    <p>INSERT COIN: {{insertCoin | number: '0.1' }}</p>
+    <mat-form-field>
+        <input matInput type = "number" class="contentBtn"  placeholder="Insert coin" [(ngModel)]="inputValue">
+    </mat-form-field>
+  
+    <button mat-fab color="primary" class="contentBtn" (click)="onItemSelector()">ADD</button>
+    <button mat-fab color="primary" class="contentBtn" (click)="reset()">RESET</button>
+    <p>{{showChange}}</p>
+
+</mat-card>
