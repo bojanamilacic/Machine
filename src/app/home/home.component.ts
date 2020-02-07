@@ -34,30 +34,27 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
-  showCoins(){
-    this.inStockCoins = "Broj novca u automatu: " +this.ninthCoinInStock + " od 50 kovanica," +
-       this.eightCoinInStock +  " od 20 kovanica,  " + this.seventhCoinInStock + " od 10 kovanica," +
+  showCoins() {
+    this.inStockCoins = "Broj novca u automatu: " + this.ninthCoinInStock + " od 50 kovanica," +
+      this.eightCoinInStock + " od 20 kovanica,  " + this.seventhCoinInStock + " od 10 kovanica," +
       this.sixthCoinInStock + " od 5 kovanica," + this.fifthCoinInStock + " od 2 kovanica,  " +
       this.fourthCoinInStock + " od 1 kovanica,  " + this.thirdCoinInStock + " od 0.5 kovanica,  " +
       this.secondCoinInStock + " od 0.2 kovanica,  " + this.firstCoinInStock + " od 0.1 kovanica"
-    if(this.sixthCoinInStock == 0 && this.fifthCoinInStock ==0 && this.fourthCoinInStock==0 && 
-      this.thirdCoinInStock==0 && this.secondCoinInStock==0 && this.firstCoinInStock ==0)
-      this.showChange = "Automat nema kovanica";
-    }
+  }
   onItemSelector() {
     if (this.inputValue == 0.1 || this.inputValue == 0.2 || this.inputValue == 0.5
-      || this.inputValue == 1 || this.inputValue == 2 || this.inputValue == 5 || 
+      || this.inputValue == 1 || this.inputValue == 2 || this.inputValue == 5 ||
       this.inputValue == 10 || this.inputValue == 20 || this.inputValue == 50) {
-        if (this.inputValue == 50) {
-          this.ninthCoinInStock += 1;
-        }
-        if (this.inputValue == 20) {
-          this.eightCoinInStock += 1;
-        }
-        if (this.inputValue == 10) {
-          this.seventhCoinInStock += 1;
-        }
-        if (this.inputValue == 5) {
+      if (this.inputValue == 50) {
+        this.ninthCoinInStock += 1;
+      }
+      if (this.inputValue == 20) {
+        this.eightCoinInStock += 1;
+      }
+      if (this.inputValue == 10) {
+        this.seventhCoinInStock += 1;
+      }
+      if (this.inputValue == 5) {
         this.sixthCoinInStock += 1;
       }
       if (this.inputValue == 2) {
@@ -78,12 +75,14 @@ export class HomeComponent implements OnInit {
       this.insertCoin += this.inputValue;
       this.inputValue = 0;
       this.getPay();
-      this.inStockCoins = "Broj novca u automatu: " +this.ninthCoinInStock + " od 50 kovanica," +
-       this.eightCoinInStock +  " od 20 kovanica,  " + this.seventhCoinInStock + " od 10 kovanica," +
-      this.sixthCoinInStock + " od 5 kovanica," + this.fifthCoinInStock + " od 2 kovanica,  " +
-      this.fourthCoinInStock + " od 1 kovanica,  " + this.thirdCoinInStock + " od 0.5 kovanica,  " +
-      this.secondCoinInStock + " od 0.2 kovanica,  " + this.firstCoinInStock + " od 0.1 kovanica"
+      this.inStockCoins = "Broj novca u automatu: " + this.ninthCoinInStock + " od 50 kovanica," +
+        this.eightCoinInStock + " od 20 kovanica,  " + this.seventhCoinInStock + " od 10 kovanica," +
+        this.sixthCoinInStock + " od 5 kovanica," + this.fifthCoinInStock + " od 2 kovanica,  " +
+        this.fourthCoinInStock + " od 1 kovanica,  " + this.thirdCoinInStock + " od 0.5 kovanica,  " +
+        this.secondCoinInStock + " od 0.2 kovanica,  " + this.firstCoinInStock + " od 0.1 kovanica";
       //  The status of the coins in the machine is shown just for example
+      (document.getElementById('disabledAddBtn') as HTMLInputElement).disabled = true;
+
     }
     else {
       this.showChange = "Automat prihvata samo kovanice od 0.1, 0.2, 0.5, 1, 2, 5";
@@ -211,25 +210,28 @@ export class HomeComponent implements OnInit {
         this.change = Math.floor(this.change - (this.firstCoin * 0.1 * 10));
       }
     }
-     
 
-    this.showChange = 'Kusur iznosi: ' 
-      
+    if (this.sixthCoin == 0 && this.fifthCoin == 0 && this.fourthCoin == 0 &&
+      this.thirdCoin == 0 && this.secondCoin == 0 && this.firstCoin == 0) {
+      this.showChange = "Automat nema dovoljno da vrati kusur";
+    }
+    else {
+
       + this.firstCoin + ' od ' + 0.1 + ' , '
-      + this.secondCoin + ' od ' + 0.2 + ' , '
-      + this.thirdCoin + ' od ' + 0.5 + ' , '
-      + this.fourthCoin + ' od ' + 1 + ' , '
-      + this.fifthCoin + ' od ' + 2 + ' , '
-      + this.sixthCoin + ' od ' + 5 + ' , '
-      + this.seventhCoin + ' od ' + 10 + ' , '
-      + this.eightCoin + ' od ' + 20 + ' , '
-      + this.ninthCoin + ' od ' + 50;
-    (document.getElementById('disabledBtn') as HTMLInputElement).disabled = true;
+        + this.secondCoin + ' od ' + 0.2 + ' , '
+        + this.thirdCoin + ' od ' + 0.5 + ' , '
+        + this.fourthCoin + ' od ' + 1 + ' , '
+        + this.fifthCoin + ' od ' + 2 + ' , '
+        + this.sixthCoin + ' od ' + 5 + ' , '
+        + this.seventhCoin + ' od ' + 10 + ' , '
+        + this.eightCoin + ' od ' + 20 + ' , '
+        + this.ninthCoin + ' od ' + 50;
+      (document.getElementById('disabledBtn') as HTMLInputElement).disabled = true;
 
-    setTimeout(() => {
-      location.reload();
-    }, 30000);
-
+      setTimeout(() => {
+        location.reload();
+      }, 30000);
+    }
   }
 
   reset() {
