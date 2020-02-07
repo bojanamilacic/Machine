@@ -8,4 +8,8 @@
 }
 .contentBtn{
     margin: 2%;
+    width: auto;
+}
+.addBtn{
+    width: 50%;
 }

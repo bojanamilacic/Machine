@@ -29,12 +29,12 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   showCoins(){
-    this.inStockCoins = "Number of coins in the machine: " + this.sixthCoinInStock + " x5," + this.fifthCoinInStock + " x2,  " +
-        this.fourthCoinInStock + " x1,  " + this.thirdCoinInStock + " x0.5,  " +
-        this.secondCoinInStock + " x0.2,  " + this.firstCoinInStock + " x0.1"
+    this.inStockCoins = "Broj kovanica u automatu: " + this.sixthCoinInStock + " od 5 kovanica," + this.fifthCoinInStock + " od 2 kovanica,  " +
+        this.fourthCoinInStock + " od 1 kovanica,  " + this.thirdCoinInStock + " od 0.5 kovanica,  " +
+        this.secondCoinInStock + " od 0.2 kovanica,  " + this.firstCoinInStock + " od 0.1 kovanica"
     if(this.sixthCoinInStock == 0 && this.fifthCoinInStock ==0 && this.fourthCoinInStock==0 && 
       this.thirdCoinInStock==0 && this.secondCoinInStock==0 && this.firstCoinInStock ==0)
-      this.showChange = "Insuficient amount in machine";
+      this.showChange = "Automat nema kovanica";
     }
   onItemSelector() {
     if (this.inputValue == 0.1 || this.inputValue == 0.2 || this.inputValue == 0.5
@@ -60,13 +60,13 @@ export class HomeComponent implements OnInit {
       this.insertCoin += this.inputValue;
       this.inputValue = 0;
       this.getPay();
-      this.inStockCoins = "Number of coins in the machine: " + this.sixthCoinInStock + " x5," + this.fifthCoinInStock + " x2,  " +
-        this.fourthCoinInStock + " x1,  " + this.thirdCoinInStock + " x0.5,  " +
-        this.secondCoinInStock + " x0.2,  " + this.firstCoinInStock + " x0.1"
+      this.inStockCoins = "Broj kovanica u automatu: " + this.sixthCoinInStock + " od 5 kovanica," + this.fifthCoinInStock + " od 2 kovanica,  " +
+      this.fourthCoinInStock + " od 1 kovanica,  " + this.thirdCoinInStock + " od 0.5 kovanica,  " +
+      this.secondCoinInStock + " od 0.2 kovanica,  " + this.firstCoinInStock + " od 0.1 kovanica"
       //  The status of the coins in the machine is shown just for example
     }
     else {
-      this.showChange = "Incorrect amount";
+      this.showChange = "Automat prihvata samo kovanice od 0.1, 0.2, 0.5, 1, 2, 5";
     }
   }
   getPay() {
@@ -75,10 +75,10 @@ export class HomeComponent implements OnInit {
       this.calculateChange();
     }
     else if (this.insertCoin == this.paymantAmount) {
-      this.showChange = "Thank you for paying";
+      this.showChange = "Hvala na plaćanju";
     }
     else if (this.insertCoin < this.paymantAmount) {
-      this.showChange = "Insuficient amount";
+      this.showChange = "Iznos nije dovoljan za uplatu";
     }
 
   }
@@ -158,12 +158,12 @@ export class HomeComponent implements OnInit {
     }
      
 
-    this.showChange = 'Change is ' + this.firstCoin + ' of ' + 0.1 + ' , '
-      + this.secondCoin + ' of ' + 0.2 + ' , '
-      + this.thirdCoin + ' of ' + 0.5 + ' , '
-      + this.fourthCoin + ' of ' + 1 + ' , '
-      + this.fifthCoin + ' of ' + 2 + ' , '
-      + this.sixthCoin + ' of ' + 5;
+    this.showChange = 'Kusur iznosi: ' + this.firstCoin + ' od ' + 0.1 + ' , '
+      + this.secondCoin + ' od ' + 0.2 + ' , '
+      + this.thirdCoin + ' od ' + 0.5 + ' , '
+      + this.fourthCoin + ' od ' + 1 + ' , '
+      + this.fifthCoin + ' od ' + 2 + ' , '
+      + this.sixthCoin + ' od ' + 5;
     (document.getElementById('disabledBtn') as HTMLInputElement).disabled = true;
 
     setTimeout(() => {
