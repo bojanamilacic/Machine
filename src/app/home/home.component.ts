@@ -10,6 +10,7 @@ export class HomeComponent implements OnInit {
   insertCoin: number = 0;
   change: number;
   pay: number;
+  coinInStock: number;
   ninthCoin: number = 0;
   eightCoin: number = 0;
   seventhCoin: number = 0;
@@ -97,10 +98,22 @@ export class HomeComponent implements OnInit {
     else {
       this.showChange = "Automat prihvata samo kovanice od 0.1, 0.2, 0.5, 1, 2, 5";
     }
+  } 
+  takeChange(){
+    this.coinInStock = this.ninthCoinInStock+this.eightCoinInStock+this.seventhCoinInStock+this.sixthCoinInStock
+  +this.fifthCoinInStock+this.fourthCoinInStock+this.thirdCoinInStock+this.secondCoinInStock+this.firstCoinInStock
+    if(this.coinInStock<this.insertCoin)
+      {
+        this.change=this.insertCoin;
+        console.log("Kusur",this.change);
+      }
+      else{
+         this.change = Math.round((this.insertCoin - this.paymantAmount) * 10) / 10;
+      }
   }
   getPay() {
-    this.change = Math.round((this.insertCoin - this.paymantAmount) * 10) / 10;
-
+    
+    this.takeChange();
     if (this.change >= 0) {
       this.calculateChange();
       this.checkChange();
@@ -125,6 +138,7 @@ export class HomeComponent implements OnInit {
           this.ninthCoinInStock = this.ninthCoinInStock - this.ninthCoin;
         }
         this.change = this.change - (this.ninthCoin * 50);
+        console.log(this.change);
         this.i++;
 
       }
