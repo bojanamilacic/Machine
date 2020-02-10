@@ -1,42 +1,54 @@
 <mat-card class="machineContent">
     <mat-form-field class="addBtn">
-        <input matInput type = "number" class="paymantBtn"  placeholder="Unesesite iznos placanja" [(ngModel)]="paymantAmount" min="0.1">
-    </mat-form-field> 
-    <mat-form-field class="addBtn"> 
-        <input matInput type = "number" class="addBtn"  placeholder="Broj kovanica od 50 na stanju" [(ngModel)]="ninthCoinInStock">
-    </mat-form-field> 
-    <mat-form-field class="addBtn"> 
-        <input matInput type = "number" class="addBtn"  placeholder="Broj kovanica od 20 na stanju" [(ngModel)]="eightCoinInStock">
-    </mat-form-field>   
-    <mat-form-field class="addBtn"> 
-        <input matInput type = "number" class="addBtn"  placeholder="Broj kovanica od 10 na stanju" [(ngModel)]="seventhCoinInStock">
-    </mat-form-field> 
+        <input matInput class="paymantBtn" type="number" placeholder="Unesesite iznos placanja"
+            [(ngModel)]="paymantAmount" min="0.1">
+    </mat-form-field>
     <mat-form-field class="addBtn">
-        <input matInput type = "number" class="addBtn"  placeholder="Broj kovanica od 5 na stanju" [(ngModel)]="sixthCoinInStock">
-    </mat-form-field>  
-    <mat-form-field class="addBtn"> 
-        <input matInput type = "number" class="addBtn"  placeholder="Broj kovanica od 2 na stanju" [(ngModel)]="fifthCoinInStock">
+        <input matInput class="addBtn" type="number" placeholder="Broj kovanica od 50 na stanju"
+            [(ngModel)]="ninthCoinInStock">
     </mat-form-field>
-    <mat-form-field class="addBtn" > 
-        <input matInput type = "number" class="addBtn"  placeholder="Broj kovanica od 1 na stanju" [(ngModel)]="fourthCoinInStock">
-    </mat-form-field>
-    <mat-form-field class="addBtn"> 
-        <input matInput type = "number" class="addBtn"  placeholder="Broj kovanica od 0.5 na stanju" [(ngModel)]="thirdCoinInStock">
-    </mat-form-field> 
-    <mat-form-field class="addBtn"> 
-        <input matInput type = "number" class="addBtn"  placeholder="Broj kovanica od 0.2 na stanju" [(ngModel)]="secondCoinInStock">
-    </mat-form-field>   
-    <mat-form-field class="addBtn"> 
-        <input matInput type = "number" class="addBtn"  placeholder="Broj kovanica od 0.1 na stanju" [(ngModel)]="firstCoinInStock">
-    </mat-form-field> 
-    <button mat-raised-button  color="primary" class="contentBtn" (click)="showCoins()">DODATI U AUTOMAT STANJE</button>
-    <p>IZNOS ZA UPLATU: {{paymantAmount}}</p>
-    <p>UNESENA VRIJEDNOST: {{insertCoin | number: '0.1' }}</p>
     <mat-form-field class="addBtn">
-        <input matInput type = "number" class="contentBtn"  placeholder="UNESITE KOVANICU" [(ngModel)]="inputValue">
+        <input matInput class="addBtn" type="number" placeholder="Broj kovanica od 20 na stanju"
+            [(ngModel)]="eightCoinInStock">
     </mat-form-field>
-  
-    <button mat-raised-button  color="primary" class="contentBtn" (click)="onItemSelector()">DODAJTE KOVANICU</button>
+    <mat-form-field class="addBtn">
+        <input matInput class="addBtn" type="number" placeholder="Broj kovanica od 10 na stanju"
+            [(ngModel)]="seventhCoinInStock">
+    </mat-form-field>
+    <mat-form-field class="addBtn">
+        <input matInput class="addBtn" type="number" placeholder="Broj kovanica od 5 na stanju"
+            [(ngModel)]="sixthCoinInStock">
+    </mat-form-field>
+    <mat-form-field class="addBtn">
+        <input matInput class="addBtn" type="number" placeholder="Broj kovanica od 2 na stanju"
+            [(ngModel)]="fifthCoinInStock">
+    </mat-form-field>
+    <mat-form-field class="addBtn">
+        <input matInput class="addBtn" type="number" placeholder="Broj kovanica od 1 na stanju"
+            [(ngModel)]="fourthCoinInStock">
+    </mat-form-field>
+    <mat-form-field class="addBtn">
+        <input matInput class="addBtn" type="number" placeholder="Broj kovanica od 0.5 na stanju"
+            [(ngModel)]="thirdCoinInStock">
+    </mat-form-field>
+    <mat-form-field class="addBtn">
+        <input matInput class="addBtn" type="number" placeholder="Broj kovanica od 0.2 na stanju"
+            [(ngModel)]="secondCoinInStock">
+    </mat-form-field>
+    <mat-form-field class="addBtn">
+        <input matInput class="addBtn" type="number" placeholder="Broj kovanica od 0.1 na stanju"
+            [(ngModel)]="firstCoinInStock">
+    </mat-form-field>
+    <button mat-raised-button color="primary" id="addDisabled" class="contentBtn" (click)="showCoins()">DODATI U AUTOMAT
+        STANJE</button>
+    <p>IZNOS ZA UPLATU: {{showPaymantAmount}}</p>
+    <p>UNESENA VRIJEDNOST: {{insertCoin}}</p>
+    <mat-form-field class="addBtn">
+        <input matInput class="contentBtn" type="number" placeholder="UNESITE KOVANICU" [(ngModel)]="inputValue">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" id="payDisabled" class="contentBtn" (click)="onItemSelector()">DODAJTE
+        KOVANICU</button>
     <button mat-raised-button color="primary" class="contentBtn" (click)="reset()">RESET</button>
     <p>{{showChange}}</p>
     <p>{{inStockCoins}}</p>
